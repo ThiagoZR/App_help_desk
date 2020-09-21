@@ -2,12 +2,6 @@
 
     session_start();
 
-    $_SESSION['x'] = 'oi, sou um vvvalor de sessão!';
-    print_r($_SESSION);
-    echo '<hr/>';
-    //echo $_SESSION['y']. '<br />';
-
-
     //variavel  que verifica se a autenticacao foi realizada
     $usuario_autenticado = false;
 
@@ -32,7 +26,7 @@
 
     if($usuario_autenticado) {
         echo 'Usuário autenticado';
-        $_SESSION['autenticado'] = 'SIM';
+        header('Location: home.php');
     } else {
         $_SESSION['autenticado'] = 'NÃO';
         header('Location: index.php?login=erro');
